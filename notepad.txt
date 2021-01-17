@@ -1,0 +1,3 @@
+Features 
+1. RBG Option(Custom Color)
+2. allows custom sizes
