@@ -1,3 +1,8 @@
 Features 
 1. RBG Option(Custom Color)
-2. allows custom sizes
+2. allows custom sizes 
+ 
+
+Gradient bg;
+background: rgb(175,104,234);
+background: linear-gradient(327deg, rgba(175,104,234,1) 0%, rgba(126,101,231,1) 100%);
