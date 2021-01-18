@@ -11,16 +11,21 @@
     <div class="container">
         <h1>Free Sketch</h1> 
         <div class="controls">
-            <button class=" btn  btn reset-btn">Reset</button> 
-            <button class=" btn rgb-btn">RGB</button>
-            <button class="btn grey-btn">Grey</button>  
+            <div class="left-controls">
+                <button class=" btn  btn reset-btn">Reset</button> 
+                <button class=" btn rgb-btn">RGB</button>
+                <button class="btn grey-btn">Grey</button>  
+            </div>
+
             <div class="pen">
                 <label for="pen">Pen Color</label> 
-                <input type="color" name="pen">
+                <input type="color" name="pen" class="color-picker">
             </div>
         </div> 
         <div class="grid">
-            <div class="cell"></div>
+        </div> 
+        <div class="scroller">
+            <button class="btn  grey-btn scroll-btn">Set Size</button>
         </div>
     </div>
 </body>

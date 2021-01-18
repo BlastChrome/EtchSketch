@@ -95,6 +95,9 @@ h1 {
 .pen {
   margin-bottom: 20px;
 }
+.color-picker {
+  cursor: pointer;
+}
 
 .grid {
   width: 95%;
@@ -102,11 +105,29 @@ h1 {
   height: 564px;
   background-color: #ffffff;
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 .cell {
   border: 1px solid black;
   margin: 0;
   padding: 0;
+}
+
+.scroll-btn {
+  margin-top: 8px;
+  background-color: var(--grey-btn);
+}
+
+@media screen and (min-width: 700px) {
+  .controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  h1 {
+    font-size: 76px;
+  }
+  .grid {
+    width: 100%;
+  }
 }
