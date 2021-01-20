@@ -72,7 +72,7 @@ const setSizeReset = () => {
 
     let size = prompt("Grid must be less than 56");  
     sizeOne = Number(size); 
-    if(size > 0 ||  size < 56 || size == "" ){
+    if(size < 0 ||  size > 56 || size == "" ){
        cellList = layoutGrid(); 
     } else{
          cellList = layoutGrid(size,size);
