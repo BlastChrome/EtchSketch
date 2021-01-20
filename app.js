@@ -20,9 +20,7 @@ const setSettings = (e) => {
     if(e.target == reset_btn){
         resetGrid(cellList);
     } else if(e.target == size_btn ){ 
-        console.log("reset btn");  
         setSizeReset();
-
     }
 }
 const layoutGrid = (width = 16, height = 16) => { 
@@ -49,7 +47,7 @@ const setRGB = (list) => {
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
             cell.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`; 
-            console.log("cell touched");
+            
         })
     })
 } 
@@ -74,8 +72,8 @@ const setSizeReset = () => {
 
     let size = prompt("Grid must be less than 56");  
     sizeOne = Number(size); 
-    if(size < 0 ||  size > 56 || size == "" ){
-       cellList = layoutGrid();
+    if(size > 0 ||  size < 56 || size == "" ){
+       cellList = layoutGrid(); 
     } else{
          cellList = layoutGrid(size,size);
     }
