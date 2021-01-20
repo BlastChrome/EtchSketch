@@ -20,31 +20,26 @@ const setSettings = (e) => {
     if(e.target == reset_btn){
         resetGrid(cellList);
     } else if(e.target == size_btn ){ 
-        // TODO
-        console.log("reset btn"); 
+        console.log("reset btn");  
+        setSizeReset();
 
     }
 }
-
 const layoutGrid = (width = 16, height = 16) => { 
     grid.style.gridTemplateColumns = `repeat(${width}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat(${height}, 1fr)`;   
-
+    grid.style.gridTemplateRows = `repeat(${height}, 1fr)`;  
     let gridPop = (width * height);  
     for(let i = 0; i <= gridPop; i++){  
         let cell = document.createElement("div"); 
-            cell.classList.add("cell"); 
-            grid.appendChild(cell);  
-        }
-         let list = document.querySelectorAll('.cell');   
-         return list;
+        cell.classList.add("cell"); 
+        grid.appendChild(cell);  
+    }
+    let list = document.querySelectorAll('.cell');   
+    return list;
 } 
-    
 const resetGrid = (list) => {
-
     list.forEach(cell => {
         cell.style.backgroundColor = "white"; 
-
     });
 } 
 const setRGB = (list) => {
@@ -53,7 +48,8 @@ const setRGB = (list) => {
             let red = Math.floor(Math.random() * 256);
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
-            cell.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            cell.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`; 
+            console.log("cell touched");
         })
     })
 } 
@@ -71,25 +67,29 @@ const setPen = (list) => {
         })
     })
 } 
-
-// TODO
 const setSizeReset = () => {
-    let size = prompt("Please enter your grid");  
-    resetGrid(cellList); 
-    grid.innerHTML = "";
-    layoutGrid(size,size);
+    while(grid.firstChild){
+        grid.removeChild(grid.firstChild);
+        }
+
+    let size = prompt("Grid must be less than 56");  
+    sizeOne = Number(size); 
+    if(size < 0 ||  size > 56 || size == "" ){
+       cellList = layoutGrid();
+    } else{
+         cellList = layoutGrid(size,size);
+    }
 }
 
-    
 reset_btn.addEventListener('click',setSettings); 
 size_btn.addEventListener('click', setSettings);
 rgb_btn.addEventListener('click',setPenColor);
 grey_btn.addEventListener('click',setPenColor);  
 pen_color.addEventListener('click', setPenColor);
 
+let cellList = layoutGrid();     
 
 
-let cellList = layoutGrid();    
 
 
     
